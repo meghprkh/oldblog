@@ -7,6 +7,7 @@
         case 'tag':
             title = '#' + page.tag;
             icon = 'tag';
+            feed = 'atom.xml'
             break;
     }
 %>
@@ -14,6 +15,11 @@
     <div class="timeline-row timeline-row-major">
         <span class="node"><i class="fa fa-<%= icon %>"></i></span>
         <h1 class="title"><%= title %></h1>
+        <% if (this.feed) { %>
+          <a href="<%= feed %>" style="float: right">
+            <i class="fa fa-rss fa-2x"></i>
+          </a>
+        <% } %>
     </div>
     <% page.posts.each(function (post, i) { %>
         <div class="timeline-row">
