@@ -4,12 +4,14 @@ date: 2016-06-03 22:28:52
 tags: [ GNOME, GSoC, Linux, Joystick, Gamepad ]
 categories: Opensource
 ---
-In this post I would share some of the things I came accross when dealing with
+In this post I would share some of the things I came across when dealing with
 the handling of joysticks and gamepads in Linux. One of the goals I wanted to
 achieve was to make our controller mappings compatible with the SDL ones so that
-we can reuse the community maintained controller mapping databse that they have.
+we can reuse the community maintained controller mapping database that they have.
 
 <!--more-->
+
+The full code can be found [here](https://gist.github.com/meghprkh/9cdce0cd4e0f41ce93413b250a207a55).
 
 The first thing that I want to clarify is that Linux provides *two* APIs for
 dealing with joysticks. One is the legacy *joystick* API and the other is the
@@ -62,7 +64,7 @@ void get_guid(struct libevdev * dev, guint16 * guid) {
 
 As we want it to be device independent, we use the `GINT16_TO_LE` helper from glib to convert a 16 bit number to little endian.
 
-But to convert this to string we convert it to its hexa-decimal equivalent using the following simple code:
+But to convert this to string we convert it to its hexadecimal equivalent using the following simple code:
 
 ```c
 void guid_to_string(guint16 * guid, char * guidstr) {
@@ -111,6 +113,6 @@ We do similar stuff for axes and hats even though the way we map changes. The ha
 
 For polling events we use the `libevdev_next_event` function. The full **libevdev documentation** can be found [here](https://www.freedesktop.org/software/libevdev/doc/latest/)
 
-The **full code** can be found [here](https://gist.github.com/meghprkh/9cdce0cd4e0f41ce93413b250a207a55). While this code uses glib, it only uses simple helper functions from glib which can be reimplemented. The only complex glib functions used are to detect the event-joystick device from the `/dev/input/by-path` folder. This code also doesnot have several fallbacks that the SDL code has.
+The **full code** can be found [here](https://gist.github.com/meghprkh/9cdce0cd4e0f41ce93413b250a207a55). While this code uses glib, it only uses simple helper functions from glib which can be easily reimplemented. The only complex glib functions used are to detect the event-joystick device from the `/dev/input/by-path` folder. This code also doesnot have several fallbacks that the SDL code has.
 
 My future work will involve the integration of this 'playground' code into the main GNOME Games code and also parsing the mapping. Other things that need to be done is to handle hats properly, handle fallbacks and see if we want to detect joystick devices by polling only or use udev.
