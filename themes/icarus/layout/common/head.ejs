@@ -47,6 +47,7 @@
     <%- partial('plugin/scripts', { isHead: true }) %>
 
     <script>
-      if (window.location.protocol != "https:") window.location.protocol = "https"
+      if (!window.location.host.startsWith('localhost') && window.location.protocol != "https:")
+        window.location.protocol = "https"
     </script>
 </head>
