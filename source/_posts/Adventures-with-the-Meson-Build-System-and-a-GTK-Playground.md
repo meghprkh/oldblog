@@ -5,7 +5,7 @@ tags: [ GNOME, Meson Build ]
 categories: Opensource
 ---
 
-This is a tutorial to create a simple hello world window using the [Meson build][1] system. The really nice thing about Meson is its *python-ish*/*lua-ish* syntax. The other thing is that it is *really* fast.
+This post describes some of my experience with the [Meson Build][1] system. Also I have created a playground for GTK which I use to create simple protoypes with some functionality. The really nice thing about Meson is its *python-ish*/*lua-ish* syntax. The other thing is that it is *really* fast.
 
 <!--more-->
 
@@ -31,6 +31,8 @@ Some reference links
 A GTK Playground / A starter kit
 ------------------------------------------
 Ever want to prototype some mockup without fiddling with your main application? I created a small playground which I use for creating prototypes https://github.com/meghprkh/valagtk . You can simply open [Glade][5], create your prototype and add some interactivity using [GtkTemplate][4] in your Vala code and BOOM! This uses the Meson build system to give you an easy-to-extend starter along with super-fast builds.
+
+Please leave your comments in the comments section =).
 
 [1]: http://mesonbuild.com/ "Meson Build"
 [2]: https://github.com/meghprkh/libgamepad "LibGamepad"
