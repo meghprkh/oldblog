@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Megh&#39;s Blog</title>
+  
+  <link href="/blog/tags/GNOME%20Games/atom.xml" rel="self"/>
+  
+  <link href="https://meghprkh.github.io/blog/"/>
+  <updated>2016-07-10T18:25:27.659Z</updated>
+  <id>https://meghprkh.github.io/blog/</id>
+  
+  <author>
+    <name>Megh Parikh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GSoC - Progress so far</title>
+    <link href="https://meghprkh.github.io/blog/2016/06/26/GSoC-Progress-so-far/"/>
+    <id>https://meghprkh.github.io/blog/2016/06/26/GSoC-Progress-so-far/</id>
+    <published>2016-06-26T13:28:22.000Z</published>
+    <updated>2016-07-10T18:25:27.659Z</updated>
+    
+    <content type="html"><![CDATA[<p>My project is about adding gamepad support to GNOME Games. This means that soon you would be able to play your favorite retro games using a gamepad!</p>
+<p>Currently you can plugin a gamepad and it will just work! The app will automatically detect it and allow you to play your favorite game using the gamepad. Support for playing multiplayer games is also there. The Games branch which supports gamepads can be found <a href="https://github.com/meghprkh/gnome-games/tree/dirty/feature/gamepad-incremental" target="_blank" rel="external">here</a>.</p>
+<a id="more"></a>
+<h2 id="How-its-being-done"><a href="#How-its-being-done" class="headerlink" title="How its being done"></a>How its being done</h2><p>To integrate gamepads a library was made. While currently this library is being developed as part of the GNOME Games codebase. Its developed under a different namespace. You can find the library code <a href="https://github.com/meghprkh/libgamepad" target="_blank" rel="external">here</a>. Please note that the API of this library is <em>unstable</em> and will keep changing.</p>
+<p>This library is a small GLib-based library that is written in Vala and aims to be easy to use. While the long-term goal is to be cross-platform, currently it supports Linux only.</p>
+<p>The gamepad mapping format used is compatible with the <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank" rel="external">SDL mappings</a>. This means that you would be able to use many gamepads without requiring to configure them.</p>
+<h2 id="What’s-there-in-the-future"><a href="#What’s-there-in-the-future" class="headerlink" title="What’s there in the future?"></a>What’s there in the future?</h2><p>After some more cleanup, this code will hopefully be merged into the Games codebase. After that I will focus on adding UI for features like easy-assigning of gamepads to ports and remapping the gamepad.</p>
+<p>I will keep posting updates on this blog. Stay tuned!</p>
+<h2 id="Related-posts"><a href="#Related-posts" class="headerlink" title="Related posts"></a>Related posts</h2><ul>
+<li><a href="/blog/2016/05/23/GSoC-2016-Introduction/" title="GSoC 2016: Introduction">GSoC 2016: Introduction</a></li>
+<li><a href="/blog/2016/06/03/Handling-joysticks-and-gamepads-in-linux/" title="Handling joysticks and gamepads in linux">Handling joysticks and gamepads in linux</a>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;My project is about adding gamepad support to GNOME Games. This means that soon you would be able to play your favorite retro games using a gamepad!&lt;/p&gt;
+&lt;p&gt;Currently you can plugin a gamepad and it will just work! The app will automatically detect it and allow you to play your favorite game using the gamepad. Support for playing multiplayer games is also there. The Games branch which supports gamepads can be found &lt;a href=&quot;https://github.com/meghprkh/gnome-games/tree/dirty/feature/gamepad-incremental&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Opensource" scheme="https://meghprkh.github.io/blog/categories/Opensource/"/>
+    
+    
+      <category term="GNOME" scheme="https://meghprkh.github.io/blog/tags/GNOME/"/>
+    
+      <category term="GSoC" scheme="https://meghprkh.github.io/blog/tags/GSoC/"/>
+    
+      <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
+    
+      <category term="Library" scheme="https://meghprkh.github.io/blog/tags/Library/"/>
+    
+      <category term="Games" scheme="https://meghprkh.github.io/blog/tags/Games/"/>
+    
+      <category term="GNOME Games" scheme="https://meghprkh.github.io/blog/tags/GNOME-Games/"/>
+    
+  </entry>
+  
+</feed>
