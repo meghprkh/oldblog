@@ -80,4 +80,4 @@ deploy:
 backup:
     type: git
     repository:
-       github: https://github.com/meghprkh/blog.git,src
+       github: git@github.com:meghprkh/blog.git,src
