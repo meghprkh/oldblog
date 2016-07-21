@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://meghprkh.github.io/blog/"/>
-  <updated>2016-07-10T19:48:31.074Z</updated>
+  <updated>2016-07-21T20:07:36.652Z</updated>
   <id>https://meghprkh.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>The state of gamepad support in Games</title>
+    <link href="https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/"/>
+    <id>https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/</id>
+    <published>2016-07-21T20:02:16.000Z</published>
+    <updated>2016-07-21T20:07:36.652Z</updated>
+    
+    <content type="html">&lt;p&gt;Gamepad support has now been merged into &lt;a href=&quot;https://wiki.gnome.org/Design/Playground/Games&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GNOME Games&lt;/a&gt; &lt;a href=&quot;https://github.com/Kekun/gnome-games/commit/c110c0390f40821779f2663bde50027b1f9f1acd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;v3.21.4&lt;/a&gt; !!! This means that you can play your favorite retro games using a gamepad!!!&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Which-gamepads-are-supported&quot;&gt;&lt;a href=&quot;#Which-gamepads-are-supported&quot; class=&quot;headerlink&quot; title=&quot;Which gamepads are supported?&quot;&gt;&lt;/a&gt;Which gamepads are supported?&lt;/h2&gt;&lt;p&gt;But you may wondering which gamepads are supported out of the box. The answer is a &lt;a href=&quot;1&quot;&gt;lot of them&lt;/a&gt;! We use the &lt;a href=&quot;2&quot;&gt;SDL mappings format&lt;/a&gt; to map your gamepad to a standard gamepad (by this I mean a PS-4 kind of gamepad). And we use a huge community maintained &lt;a href=&quot;1&quot;&gt;database&lt;/a&gt; of mappings, so your device would most likely be there. We use a slightly modified version of this database. See &lt;a href=&quot;https://github.com/gabomdq/SDL_GameControllerDB/pull/94&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#94&lt;/a&gt; and &lt;a href=&quot;https://github.com/gabomdq/SDL_GameControllerDB/pull/95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#95&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;h2 id=&quot;Custom-mappings&quot;&gt;&lt;a href=&quot;#Custom-mappings&quot; class=&quot;headerlink&quot; title=&quot;Custom mappings?&quot;&gt;&lt;/a&gt;Custom mappings?&lt;/h2&gt;&lt;p&gt;Well I just realized while writing this post that we had forgotten about this :sweat_smile:.  But I have made a &lt;a href=&quot;https://github.com/Kekun/gnome-games/pull/310&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PR&lt;/a&gt; for it, so it should get merged soon. But as of now there is no GUI for it. Currently you can use Steam or the SDL test/controllermap tool to generate a custom mapping string as described &lt;a href=&quot;https://github.com/spurious/SDL-mirror/blob/release-2.0.4/src/joystick/SDL_gamecontrollerdb.h#L26-L30&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;. Then you should paste in in a file in the user’s config directory. As per this PR this file is &lt;code&gt;&amp;lt;config_dir&amp;gt;/gnome-games/gamecontrollerdb.txt&lt;/code&gt; (&lt;code&gt;&amp;lt;config_dir&amp;gt;&lt;/code&gt; is mostly &lt;code&gt;~/.config&lt;/code&gt;).&lt;/p&gt;
+&lt;h2 id=&quot;Multiplayer-support&quot;&gt;&lt;a href=&quot;#Multiplayer-support&quot; class=&quot;headerlink&quot; title=&quot;Multiplayer support&quot;&gt;&lt;/a&gt;Multiplayer support&lt;/h2&gt;&lt;p&gt;Multiplayer games are quite well supported. As of now there is no GUI for reassigning gamepads to other players, but the default behaviour is quite predictable. Just plugin the gamepads in the order of the players and all will be well.&lt;/p&gt;
+&lt;p&gt;The exact behaviour is this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the first player with no gamepad will be assigned the keyboard&lt;/li&gt;
+&lt;li&gt;if there are &lt;em&gt;N&lt;/em&gt; initially plugged-in gamepads, then they are assigned to the first &lt;em&gt;N&lt;/em&gt; players and keyboard is assigned to player &lt;em&gt;N + 1&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;when a gamepad is plugged in, it is assigned to the first player with no gamepad (it may not be the last one), it can replace the keyboard&lt;/li&gt;
+&lt;li&gt;when a gamepad is plugged out, its player shouldn’t have any gamepad assigned but it shouldn’t change the player to which other gamepads are assigned&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Next-steps&quot;&gt;&lt;a href=&quot;#Next-steps&quot; class=&quot;headerlink&quot; title=&quot;Next steps&quot;&gt;&lt;/a&gt;Next steps&lt;/h2&gt;&lt;p&gt;The next steps involve adding a UI to remap the gamepads assigned too the players and then maybe a UI for remapping the controls if time permits.&lt;/p&gt;
+&lt;p&gt;Happy gaming!&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Gamepad support has now been merged into &lt;a href=&quot;https://wiki.gnome.org/Design/Playground/Games&quot;&gt;GNOME Games&lt;/a&gt; &lt;a href=&quot;https://github.com/Kekun/gnome-games/commit/c110c0390f40821779f2663bde50027b1f9f1acd&quot;&gt;v3.21.4&lt;/a&gt; !!! This means that you can play your favorite retro games using a gamepad!!!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Opensource" scheme="https://meghprkh.github.io/blog/categories/Opensource/"/>
+    
+    
+      <category term="GNOME" scheme="https://meghprkh.github.io/blog/tags/GNOME/"/>
+    
+      <category term="GSoC" scheme="https://meghprkh.github.io/blog/tags/GSoC/"/>
+    
+      <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
+    
+      <category term="Games" scheme="https://meghprkh.github.io/blog/tags/Games/"/>
+    
+      <category term="GNOME Games" scheme="https://meghprkh.github.io/blog/tags/GNOME-Games/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Adventures with the Meson Build System and a GTK Playground</title>
     <link href="https://meghprkh.github.io/blog/2016/07/11/Adventures-with-the-Meson-Build-System-and-a-GTK-Playground/"/>
     <id>https://meghprkh.github.io/blog/2016/07/11/Adventures-with-the-Meson-Build-System-and-a-GTK-Playground/</id>
     <published>2016-07-10T19:30:04.000Z</published>
-    <updated>2016-07-10T19:48:31.074Z</updated>
+    <updated>2016-07-10T19:50:50.168Z</updated>
     
     <content type="html">&lt;p&gt;This post describes some of my experience with the &lt;a href=&quot;http://mesonbuild.com/&quot; title=&quot;Meson Build&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Meson Build&lt;/a&gt; system. Also I have created a playground for GTK which I use to create simple protoypes with some functionality. The really nice thing about Meson is its &lt;em&gt;python-ish&lt;/em&gt;/&lt;em&gt;lua-ish&lt;/em&gt; syntax. The other thing is that it is &lt;em&gt;really&lt;/em&gt; fast.&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
