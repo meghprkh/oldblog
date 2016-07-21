@@ -5,7 +5,7 @@
   <link href="/blog/tags/GSoC/atom.xml" rel="self"/>
   
   <link href="https://meghprkh.github.io/blog/"/>
-  <updated>2016-07-21T20:12:55.268Z</updated>
+  <updated>2016-07-21T20:16:39.244Z</updated>
   <id>https://meghprkh.github.io/blog/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/"/>
     <id>https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/</id>
     <published>2016-07-21T20:02:16.000Z</published>
-    <updated>2016-07-21T20:12:55.268Z</updated>
+    <updated>2016-07-21T20:16:39.244Z</updated>
     
     <content type="html"><![CDATA[<p>Gamepad support has now been merged into <a href="https://wiki.gnome.org/Design/Playground/Games" target="_blank" rel="external">GNOME Games</a> <a href="https://github.com/Kekun/gnome-games/commit/c110c0390f40821779f2663bde50027b1f9f1acd" target="_blank" rel="external">v3.21.4</a> !!! This means that you can play your favorite retro games using a gamepad!!!</p>
 <a id="more"></a>
-<h2 id="Which-gamepads-are-supported"><a href="#Which-gamepads-are-supported" class="headerlink" title="Which gamepads are supported?"></a>Which gamepads are supported?</h2><p>But you may wondering which gamepads are supported out of the box. The answer is a <a href="https://github.com/gabomdq/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt" target="_blank" rel="external">lot of them</a>! We use the <a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/include/SDL_gamecontroller.h#L96-L108" target="_blank" rel="external">SDL mappings format</a> to map your gamepad to a standard gamepad (by this I mean a PS-4 kind of gamepad). And we use a huge community maintained <a href="https://github.com/gabomdq/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt" target="_blank" rel="external">database</a> of mappings, so your device would most likely be there. We use a slightly modified version of this database. See <a href="https://github.com/gabomdq/SDL_GameControllerDB/pull/94" target="_blank" rel="external">#94</a> and <a href="https://github.com/gabomdq/SDL_GameControllerDB/pull/95" target="_blank" rel="external">#95</a> for more details.</p>
+<h2 id="Which-gamepads-are-supported"><a href="#Which-gamepads-are-supported" class="headerlink" title="Which gamepads are supported?"></a>Which gamepads are supported?</h2><p>But you may wondering which gamepads are supported out of the box. The answer is a <a href="https://github.com/gabomdq/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt" target="_blank" rel="external">lot of them</a>! We use the <a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/include/SDL_gamecontroller.h#L96-L108" target="_blank" rel="external">SDL mappings format</a> to map your gamepad to a standard gamepad (by this I mean a seventh generation/XBox-360 kind of gamepad). And we use a huge community maintained <a href="https://github.com/gabomdq/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt" target="_blank" rel="external">database</a> of mappings, so your device would most likely be there. We use a slightly modified version of this database. See <a href="https://github.com/gabomdq/SDL_GameControllerDB/pull/94" target="_blank" rel="external">#94</a> and <a href="https://github.com/gabomdq/SDL_GameControllerDB/pull/95" target="_blank" rel="external">#95</a> for more details.</p>
 <h2 id="Custom-mappings"><a href="#Custom-mappings" class="headerlink" title="Custom mappings?"></a>Custom mappings?</h2><p>Well I just realized while writing this post that we had forgotten about this :sweat_smile:.  But I have made a <a href="https://github.com/Kekun/gnome-games/pull/310" target="_blank" rel="external">PR</a> for it, so it should get merged soon. But as of now there is no GUI for it. Currently you can use Steam or the SDL test/controllermap tool to generate a custom mapping string as described <a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/src/joystick/SDL_gamecontrollerdb.h#L26-L30" target="_blank" rel="external">here</a>. Then you should paste in in a file in the user’s config directory. As per this PR this file is <code>&lt;config_dir&gt;/gnome-games/gamecontrollerdb.txt</code> (<code>&lt;config_dir&gt;</code> is mostly <code>~/.config</code>).</p>
 <h2 id="Multiplayer-support"><a href="#Multiplayer-support" class="headerlink" title="Multiplayer support"></a>Multiplayer support</h2><p>Multiplayer games are quite well supported. As of now there is no GUI for reassigning gamepads to other players, but the default behaviour is quite predictable. Just plugin the gamepads in the order of the players and all will be well.</p>
 <p>The exact behaviour is this:</p>
@@ -154,11 +154,11 @@
     
       <category term="GSoC" scheme="https://meghprkh.github.io/blog/tags/GSoC/"/>
     
-      <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
-    
       <category term="Linux" scheme="https://meghprkh.github.io/blog/tags/Linux/"/>
     
       <category term="Joystick" scheme="https://meghprkh.github.io/blog/tags/Joystick/"/>
+    
+      <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
     
   </entry>
   
