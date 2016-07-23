@@ -1,0 +1,4 @@
+[submodule "themes/icarus"]
+	path = themes/icarus
+	url = https://github.com/meghprkh/hexo-theme-icarus
+	branch = megh-blog
