@@ -14,6 +14,8 @@
     
 
     
+        <link rel="alternate" href="/atom.xml" title="Megh&#39;s Blog" type="application/atom+xml" />
+    
 
     
 
@@ -176,13 +178,30 @@ ga('send', 'pageview');
             <table>
                 <tr>
                     
-                    <td><a href="https://github.com/meghprkh/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="https://twitter.com/meghparikh" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="https://github.com/meghprkh/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://meghprkh.github.io" target="_blank" title="globe"><i class="fa fa-globe"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/meghparikh" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/blog/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="https://meghprkh.github.io" target="_blank" title="globe" class=tooltip>
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/blog/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -547,17 +566,17 @@ ga('send', 'pageview');
         
     
     <script>
-    var disqus_shortname = 'meghblog';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    var disqus_config = function () {
+        
+        this.page.identifier = 'undefined';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'meghblog' + '.disqus.com/count.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
-    </script>
+</script>
 
 
 

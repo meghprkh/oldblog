@@ -21,6 +21,8 @@ My project is related to an application called GNOME Games. As you can see this 
     
 
     
+        <link rel="alternate" href="/atom.xml" title="Megh&#39;s Blog" type="application/atom+xml" />
+    
 
     
 
@@ -183,13 +185,30 @@ ga('send', 'pageview');
             <table>
                 <tr>
                     
-                    <td><a href="https://github.com/meghprkh/" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
                     
-                    <td><a href="https://twitter.com/meghparikh" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></td>
+                    <td>
+                        <a href="https://github.com/meghprkh/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="https://meghprkh.github.io" target="_blank" title="globe"><i class="fa fa-globe"></i></a></td>
+                    <td>
+                        <a href="https://twitter.com/meghparikh" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
                     
-                    <td><a href="/blog/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+                    <td>
+                        <a href="https://meghprkh.github.io" target="_blank" title="globe" class=tooltip>
+                            <i class="fa fa-globe"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/blog/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
                     
                 </tr>
             </table>
@@ -212,8 +231,9 @@ ga('send', 'pageview');
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2016/05/23/GSoC-2016-Introduction/">
@@ -222,19 +242,20 @@ ga('send', 'pageview');
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/blog/categories/Opensource/">Opensource</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/blog/tags/GNOME/">GNOME</a>, <a class="tag-link" href="/blog/tags/GSoC/">GSoC</a>
     </div>
 
-                </div>
+                    </div>
+                
             </header>
         
         <div class="article-entry" itemprop="articleBody">
@@ -256,7 +277,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://meghprkh.github.io/blog/blog/2016/05/23/GSoC-2016-Introduction/" data-id="ciqwrdvbv0006w7vzgureunm5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://meghprkh.github.io/blog/2016/05/23/GSoC-2016-Introduction/" data-id="ciqz1977r0000yvvzowjvbmi8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -324,7 +345,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="https://meghprkh.github.io/blog/blog/2016/05/23/GSoC-2016-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://meghprkh.github.io/blog/blog/2016/05/23/GSoC-2016-Introduction/">Comments</a>
+        <a href="https://meghprkh.github.io/blog/2016/05/23/GSoC-2016-Introduction/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="https://meghprkh.github.io/blog/2016/05/23/GSoC-2016-Introduction/">Comments</a>
     
 
         </footer>
@@ -527,19 +548,19 @@ ga('send', 'pageview');
         
     
     <script>
-    var disqus_shortname = 'meghblog';
-    
-    
-    var disqus_url = 'https://meghprkh.github.io/blog/blog/2016/05/23/GSoC-2016-Introduction/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    var disqus_config = function () {
+        
+            this.page.url = 'https://meghprkh.github.io/blog/2016/05/23/GSoC-2016-Introduction/';
+        
+        this.page.identifier = 'GSoC-2016-Introduction';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'meghblog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
-    </script>
+</script>
 
 
 
