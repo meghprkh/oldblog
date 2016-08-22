@@ -5,7 +5,7 @@
   <link href="/blog/tags/GSoC,%20GNOME/atom.xml" rel="self"/>
   
   <link href="https://meghprkh.github.io/blog/"/>
-  <updated>2016-08-22T11:47:09.793Z</updated>
+  <updated>2016-08-22T11:49:40.022Z</updated>
   <id>https://meghprkh.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/"/>
     <id>https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/</id>
     <published>2016-08-22T11:41:26.000Z</published>
-    <updated>2016-08-22T11:47:09.793Z</updated>
+    <updated>2016-08-22T11:49:40.022Z</updated>
     
     <content type="html"><![CDATA[<p>This post is meant to serve as a summary of work I did during GSoC. You may directly wish to skip to the <a href="#Links">links section</a></p>
 <a id="more"></a>
@@ -48,7 +48,7 @@
 <h1 id="Some-technical-details"><a href="#Some-technical-details" class="headerlink" title="Some technical details"></a>Some technical details</h1><ul>
 <li><a href="https://meghprkh.github.io/blog/2016/06/03/Handling-joysticks-and-gamepads-in-linux/">Evdev</a> was used using <a href="https://www.freedesktop.org/software/libevdev/doc/latest/" target="_blank" rel="external">libevdev</a> to handle gamepads</li>
 <li><a href="https://en.wikipedia.org/wiki/Udev" target="_blank" rel="external">Udev</a> was used using <a href="https://wiki.gnome.org/Projects/libgudev" target="_blank" rel="external">GUdev</a> for detecting plugging/unplugging of gamepads</li>
-<li><a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/src/joystick/SDL_gamecontrollerdb.h#L26-L30" target="_blank" rel="external">SDL mappings format</a> was used so that we have access to a large controller <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank" rel="external">mappings database</a>. In fact I even wrote a <a href="https://github.com/gabomdq/SDL_GameControllerDB/commits/master?author=meghprkh" target="_blank" rel="external">python script</a> to validate the mappings and integrated with Travis so that the maintainer can easily merge the mappings.</li>
+<li><a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/src/joystick/SDL_gamecontrollerdb.h#L26-L30" target="_blank" rel="external">SDL mappings format</a> was used so that we have access to a large controller <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank" rel="external">mappings database</a>. I even wrote a <a href="https://github.com/gabomdq/SDL_GameControllerDB/commits/master?author=meghprkh" target="_blank" rel="external">python script</a> to validate the mappings and integrated with Travis so that the maintainer can easily merge the mappings.</li>
 </ul>
 <h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1><ul>
 <li><a href="https://github.com/Kekun/gnome-games/commits/master?author=meghprkh" target="_blank" rel="external">Add Gamepad support - commits</a></li>
