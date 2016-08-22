@@ -5,7 +5,7 @@
   <link href="/blog/tags/GSoC/atom.xml" rel="self"/>
   
   <link href="https://meghprkh.github.io/blog/"/>
-  <updated>2016-07-21T20:16:39.244Z</updated>
+  <updated>2016-08-22T16:17:56.075Z</updated>
   <id>https://meghprkh.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GSoC Summary</title>
+    <link href="https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/"/>
+    <id>https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/</id>
+    <published>2016-08-22T11:41:26.000Z</published>
+    <updated>2016-08-22T16:17:56.075Z</updated>
+    
+    <content type="html"><![CDATA[<p>This post is meant to serve as a summary of work I did during GSoC. You may directly wish to skip to the <a href="#Links">links section</a></p>
+<a id="more"></a>
+<h1 id="The-Goal"><a href="#The-Goal" class="headerlink" title="The Goal"></a>The Goal</h1><p>The goal to be achieved was to be able to play both single player and multiplayer emulated games using a gamepad in GNOME Games</p>
+<h1 id="Where-are-we-right-now"><a href="#Where-are-we-right-now" class="headerlink" title="Where are we right now"></a>Where are we right now</h1><ul>
+<li><em>Plug-n-play gamepad support:</em> We use the SDL mappings format and thus reuse a huge community DB of mappings to provide this.</li>
+<li><em>Monitor plugin and unplugging of gamepads and react to it without user interaction:</em> The user should not be forced to take unnecessary steps to use the gamepads.</li>
+<li><em>Multiplayer games/multiple gamepads support:</em> While there is no GUI for this the current way is intuitive and easy to use.  In fact, normally you won’t have the need to use the GUI at all. <a href="https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/#Multiplayer-support">More about this here</a></li>
+<li><em>Separate codebase that can be reused (not a library yet):</em> The codebase leaves under a separate directory and has no dependencies on the main codebase. In fact, initially it was developed under a different namespace. Also in the process a library - <a href="https://github.com/meghprkh/libgamepad" target="_blank" rel="external">libgamepad</a> had been created. But I couldnt find the time to keep it up-to-date. Nevertheless it is functional currently also.</li>
+</ul>
+<h1 id="What-is-left-to-be-done"><a href="#What-is-left-to-be-done" class="headerlink" title="What is left to be done"></a>What is left to be done</h1><ul>
+<li>Intuitive GUI to remap gamepads when multiple gamepads are plugged in. Mockups had been created and discussed ad the final design is ready (more about this in a future blog post)! You can check the current progress <a href="https://github.com/meghprkh/gnome-games/tree/dirty/feature/gamepad-select-ui-new" target="_blank" rel="external">here</a>.</li>
+</ul>
+<h1 id="Stretch-Goals"><a href="#Stretch-Goals" class="headerlink" title="Stretch Goals"></a>Stretch Goals</h1><p>I hope that I would be able to complete these during my winter vacation:</p>
+<ul>
+<li>Create a gamepad mapping creator UI (currently either Steam or SDL’s controller map tool can be used for this)</li>
+<li>Update <a href="https://github.com/meghprkh/libgamepad" target="_blank" rel="external">libgamepad</a> to match the current codebase of Games.</li>
+</ul>
+<h1 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h1><ul>
+<li><em>Evdev and the Joystick API:</em> Initially WIP code had already been written by my mentor for the Joystick API and my project was to finish and polish that code. But later I came to know that the evdev API is the better API and that is what is used by all current libraries/programs (SDL/RetroArch). So I had to dig into the evdev API and start afresh.</li>
+<li><em>VAPI for libevdev:</em> Vala requires us to create VAPIs for using C libraries (and you have to do it manually for non-Glib based ones). While creating the VAPI for libevdev I encountered a lot of challenges and got to know the Vala language much better.</li>
+<li><em>Understanding the SDL codebase and the mappings format:</em> Now we needed a good mappings database. So we thought that it would be better if we could reuse some already existing database. So we decided to adopt the SDL mappings format, but I had some difficulty initially understanding their format (especially the GUID). Also I took inspiration from the SDL code and adopted it but I faced some difficulty understanding their C code.</li>
+<li><em>Multiplayer support:</em> We needed an intuitive way which does not interfere with the user, i.e. we wanted a way to implement this so that the user will not have to do anything to play multiplayer games by default but if he wants he can configure the default assignment. After some brainstorming we decided on <a href="https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/#Multiplayer-support">this</a></li>
+</ul>
+<h1 id="Some-technical-details"><a href="#Some-technical-details" class="headerlink" title="Some technical details"></a>Some technical details</h1><ul>
+<li><a href="https://meghprkh.github.io/blog/2016/06/03/Handling-joysticks-and-gamepads-in-linux/">Evdev</a> was used using <a href="https://www.freedesktop.org/software/libevdev/doc/latest/" target="_blank" rel="external">libevdev</a> to handle gamepads</li>
+<li><a href="https://en.wikipedia.org/wiki/Udev" target="_blank" rel="external">Udev</a> was used using <a href="https://wiki.gnome.org/Projects/libgudev" target="_blank" rel="external">GUdev</a> for detecting plugging/unplugging of gamepads</li>
+<li><a href="https://github.com/spurious/SDL-mirror/blob/release-2.0.4/src/joystick/SDL_gamecontrollerdb.h#L26-L30" target="_blank" rel="external">SDL mappings format</a> was used so that we have access to a large controller <a href="https://github.com/gabomdq/SDL_GameControllerDB" target="_blank" rel="external">mappings database</a>. I even wrote a <a href="https://github.com/gabomdq/SDL_GameControllerDB/commits/master?author=meghprkh" target="_blank" rel="external">python script</a> to validate the mappings and integrated with Travis so that the maintainer can easily merge the mappings.</li>
+</ul>
+<h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1><ul>
+<li><a href="https://github.com/Kekun/gnome-games/commits/master?author=meghprkh" target="_blank" rel="external">Add Gamepad support - commits</a></li>
+<li><a href="https://meghprkh.github.io/blog/2016/07/22/The-state-of-gamepad-support-in-Games/#Multiplayer-support">Multiplayer support</a></li>
+<li><a href="https://github.com/meghprkh/libgamepad" target="_blank" rel="external">libgamepad</a></li>
+<li><a href="https://github.com/meghprkh/gnome-games/tree/dirty/feature/gamepad-select-ui-new" target="_blank" rel="external">Multiple gamepads select UI WIP branch</a></li>
+<li><a href="https://meghprkh.github.io/blog/2016/06/03/Handling-joysticks-and-gamepads-in-linux/">More details on the implemetation</a></li>
+<li><a href="https://github.com/gabomdq/SDL_GameControllerDB/commits/master?author=meghprkh" target="_blank" rel="external">Python script to check SDL controller DB</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This post is meant to serve as a summary of work I did during GSoC. You may directly wish to skip to the &lt;a href=&quot;#Links&quot;&gt;links section&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="GNOME" scheme="https://meghprkh.github.io/blog/tags/GNOME/"/>
+    
+      <category term="GSoC" scheme="https://meghprkh.github.io/blog/tags/GSoC/"/>
+    
+  </entry>
   
   <entry>
     <title>The state of gamepad support in Games</title>
@@ -97,11 +155,11 @@
     
       <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
     
+      <category term="Library" scheme="https://meghprkh.github.io/blog/tags/Library/"/>
+    
       <category term="Games" scheme="https://meghprkh.github.io/blog/tags/Games/"/>
     
       <category term="GNOME Games" scheme="https://meghprkh.github.io/blog/tags/GNOME-Games/"/>
-    
-      <category term="Library" scheme="https://meghprkh.github.io/blog/tags/Library/"/>
     
   </entry>
   

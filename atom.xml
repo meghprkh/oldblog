@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://meghprkh.github.io/blog/"/>
-  <updated>2016-08-22T11:49:40.022Z</updated>
+  <updated>2016-08-22T16:17:56.075Z</updated>
   <id>https://meghprkh.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/"/>
     <id>https://meghprkh.github.io/blog/2016/08/22/GSoC-Summary/</id>
     <published>2016-08-22T11:41:26.000Z</published>
-    <updated>2016-08-22T11:49:40.022Z</updated>
+    <updated>2016-08-22T16:17:56.075Z</updated>
     
     <content type="html"><![CDATA[<p>This post is meant to serve as a summary of work I did during GSoC. You may directly wish to skip to the <a href="#Links">links section</a></p>
 <a id="more"></a>
@@ -67,7 +67,9 @@
     </summary>
     
     
-      <category term="GSoC, GNOME" scheme="https://meghprkh.github.io/blog/tags/GSoC-GNOME/"/>
+      <category term="GNOME" scheme="https://meghprkh.github.io/blog/tags/GNOME/"/>
+    
+      <category term="GSoC" scheme="https://meghprkh.github.io/blog/tags/GSoC/"/>
     
   </entry>
   
@@ -191,11 +193,11 @@
     
       <category term="Gamepad" scheme="https://meghprkh.github.io/blog/tags/Gamepad/"/>
     
+      <category term="Library" scheme="https://meghprkh.github.io/blog/tags/Library/"/>
+    
       <category term="Games" scheme="https://meghprkh.github.io/blog/tags/Games/"/>
     
       <category term="GNOME Games" scheme="https://meghprkh.github.io/blog/tags/GNOME-Games/"/>
-    
-      <category term="Library" scheme="https://meghprkh.github.io/blog/tags/Library/"/>
     
   </entry>
   
